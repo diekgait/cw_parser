@@ -1,1 +1,0 @@
-@keyframes menuMove{0%{transform:translate(100%)}to{transform:translate(0)}}.animate-menu{animation:menuMove .1s ease-out forwards}

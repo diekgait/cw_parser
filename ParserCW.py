@@ -46,7 +46,7 @@ strip_list = [
 ]
 # Print header
 f = open(f'{script_dir}/output.csv', "w")
-f.write('Coin 1, Coin 2,Volume Coin 1,Volume Coin 2,Updated,Spread,Strategy,normalised spread (ZSCORE),Rolling ZScore,Profile (Clustering Analysis),X | Y (Conditional Likelihood),Y | X (Conditional Likelihood),Copula-based Correlation,Cointegration Jn (Johansen Test),Cointegration EG (Engle-Granger Test),Hurst Exponent,Half Life,0sigma,2sigma,Coin1 Annualized Volatility,Coin2 Annualized Volatility,VaR (Value at Risk @ 99%),CVaR (Conditional Value at Risk @ 99%),MDD (Maximum Drawdown),Net Return (Net Backtest Return),Sharpe (Sharpe Ratio)\n')
+f.write('Coin X, Coin Y,Volume Coin X,Volume Coin Y,Updated,Spread,Strategy,normalised spread (ZSCORE),Rolling ZScore,Profile (Clustering Analysis),X | Y (Conditional Likelihood),Y | X (Conditional Likelihood),Copula-based Correlation,Cointegration Jn (Johansen Test),Cointegration EG (Engle-Granger Test),Hurst Exponent,Half Life,0sigma,2sigma,Coin X Annualized Volatility,Coin Y Annualized Volatility,VaR (Value at Risk @ 99%),CVaR (Conditional Value at Risk @ 99%),MDD (Maximum Drawdown),Net Return (Net Backtest Return),Sharpe (Sharpe Ratio)\n')
 counter = 1
 for row in rows:
     if counter > limit:
@@ -122,4 +122,3 @@ for row in rows:
         sharpe = lines[158]
         f.write(f'{coin1},{coin2},{volume_coin1},{volume_coin2},{updated},{spread},{strategy},{normalised_spread},{rolling_zscore},{profile},{x_y_c_l},{y_x_c_l},{correlation},{cointegration_jn},{cointegration_eg},{hurst},{half_live},{sigma_0},{sigma_2},{coin1_a_v},{coin2_a_v},{var},{cvar},{mdd},{net_return},{sharpe}\n')
 f.close
-print(counter)
