@@ -79,11 +79,11 @@ for row in rows:
             exit('Error Spread!')
         # Strategy
         if lines[28] == 'spread':
-            strategy = 'Spread'
+            strategy = f'ZSCORE "norm" - {spread}'
         elif lines[28] == 'zscore_roll':
-            strategy = 'Rolling Z-Score'
+            strategy = f'Rolling Z-Score - {spread}'
         elif lines[28] == 'copula':
-            strategy = 'Copula'
+            strategy = f'Copula'
         else:
             exit('Error Strategy!')
         # Z-score
@@ -120,5 +120,5 @@ for row in rows:
         # Reward
         net_return = lines[151]
         sharpe = lines[158]
-        f.write(f'{coin1},{coin2},{volume_coin1},{volume_coin2},{updated},{spread},{strategy},{normalised_spread},{rolling_zscore},{profile},{x_y_c_l},{y_x_c_l},{correlation},{cointegration_jn},{cointegration_eg},{hurst},{half_live},{sigma_0},{sigma_2},{coin1_a_v},{coin2_a_v},{var},{cvar},{mdd},{net_return},{sharpe}\n')
+        f.write(f'{coin1},{coin2},{volume_coin1},{volume_coin2},{updated},{strategy},{normalised_spread},{rolling_zscore},{profile},{x_y_c_l},{y_x_c_l},{correlation},{cointegration_jn},{cointegration_eg},{hurst},{half_live},{sigma_0},{sigma_2},{coin1_a_v},{coin2_a_v},{var},{cvar},{mdd},{net_return},{sharpe}\n')
 f.close
